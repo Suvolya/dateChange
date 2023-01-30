@@ -1,4 +1,4 @@
-package ru.netology;
+package ru.netology.data;
 
 import com.github.javafaker.Faker;
 
@@ -13,6 +13,10 @@ public class DataGenerator {
 
     private static Faker getFaker() {
         return new Faker(new Locale("ru"));
+    }
+
+    public static String getFormatDate(LocalDate date) {
+        return date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 
     public static LocalDate generateDate() {
